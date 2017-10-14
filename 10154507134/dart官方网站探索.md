@@ -1,0 +1,12 @@
+请使用你找到的url地址替换下面的url。  
+[ 1. dart语言特性中的循环语句定义和操作方法](https://www.dartlang.org/guides/language/language-tour)  
+[ 2. dart字符串的定义和操作方法   ](https://www.dartlang.org/guides/language/language-tour)  
+[ 3. dart函数定义和使用方法 ](https://www.dartlang.org/guides/language/language-tour)  
+[ 4. dart中数组定义和使用方法  ](https://www.dartlang.org/guides/language/language-tour)  
+[ 5. art中列表定义和使用方法   ](https://www.dartlang.org/guides/language/language-tour)  
+[ 6. dart中 Map定义和使用方法     ](https://www.dartlang.org/guides/language/language-tour)  
+[ 7.  querySelector（）函数的详细API解释   ](url)  
+[ 8. 详细解释dart如何操作html的文档   ](url)  
+[ 9. dart web app应用程序组织结构的解释部分](url)  
+[ 10. dart可用的各种工具的解释部分](url)  
+[ 11. 指引你到其他社区社区寻求dart相关问题帮助的解释部分](url)  
