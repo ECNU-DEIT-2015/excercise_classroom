@@ -24,7 +24,7 @@
 ### 分析大夏学堂
 
 1、大夏学堂不会及时地为开学后的选课的同学进行课程注册，可能引起作业无法提交的问题。我在贴吧上就看到一个同学的发帖反映大夏学堂没有为他注册课程，导致他无法提交作业。
-<div align=center><img width = "700" height = "400" src = "https://github.com/ECNU-DEIT-2015/10152510231/blob/master/doc/Pictures/5.png?raw=true" ></div>  </br>
+<div align=center><img width = "700" height = "400" src = "https://github.com/wqngze0/xx/blob/master/images/7.png?raw=true" ></div>  </br>
 
 2、大夏学堂界面布局简约大方，并且对内容进行了分类和板块呈现，用户对界面的内容能够一目了然，大大提高了网站的易用性。
 <div align=center><img width = "700" height = "400" src = "https://github.com/ECNU-DEIT-2015/10152510231/blob/master/doc/Pictures/6.png?raw=true" ></div> </br>
