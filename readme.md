@@ -1,1 +1,1 @@
-点名程序实现在web/index.html文件中
+点名实现在index.html文件中
