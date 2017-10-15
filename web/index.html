@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css\bootstrap.min.css" />
+    <script type="text/javascript" src="js\jquery-3.1.1.min.js" ></script>
+    <script type="text/javascript" src="js\bootstrap.min.js"></script>
+    <script src="js\angular.min.js"></script>
+    <script>
+        function dianming() {
+            var s = new Map([
+                [0,"student0"],
+                [1,"student1"],
+                [2,"student2"],
+                [3,"studnet3"]]);
+            var student =  document.getElementById("student");
+            student.value = s.get(Math.ceil(Math.random()*1000)%4)  ;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <button type="button" class="btn btn-default" id="dianming" onclick="dianming()">点名</button>
+        </div>
+    </div>
+
+    <div>
+    <span>
+        <input type="text" id="student"></input>
+    </span>
+    </div>
+</div>
+
+</body>
+</html>
