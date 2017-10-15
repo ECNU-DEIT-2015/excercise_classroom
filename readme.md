@@ -1,1 +1,1 @@
-点名实现在index.html文件中
+the code of dianming is in web/index.html
