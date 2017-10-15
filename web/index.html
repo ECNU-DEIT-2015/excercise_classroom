@@ -9,13 +9,13 @@
     <script src="js\angular.min.js"></script>
     <script>
         function dianming() {
-            var s = new Map([
-                [0,"student0"],
-                [1,"student1"],
-                [2,"student2"],
-                [3,"studnet3"]]);
+            var s = new Map();
+            for (var i=0;i<22;i++)
+            {
+               s.set(i,"studetn"+i.toString());
+            }
             var student =  document.getElementById("student");
-            student.value = s.get(Math.ceil(Math.random()*1000)%4)  ;
+            student.value = s.get(Math.ceil(Math.random()*1000)%22)  ;
         }
     </script>
 </head>
