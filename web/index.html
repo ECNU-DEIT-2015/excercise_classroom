@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>随机点名程序</title>
+    <meta charset="utf-8">
+    <title>Dianming</title>
     <link rel="stylesheet" href="css\bootstrap.min.css" />
     <script type="text/javascript" src="js\jquery-3.1.1.min.js" ></script>
     <script type="text/javascript" src="js\bootstrap.min.js"></script>
     <script src="js\angular.min.js"></script>
-    <script>
-        function dianming() {
-            var s = new Map();
-            for (var i=0;i<22;i++)
-            {
-               s.set(i,"studetn"+i.toString());
-            }
-            var student =  document.getElementById("student");
-            student.value = s.get(Math.ceil(Math.random()*1000)%22)  ;
-        }
-    </script>
 </head>
 <body>
+
 <div class="container">
-    <div class="row clearfix">
+    <div class="row clearfix" style="margin: 50px" >
         <div class="col-md-12 column">
-            <button type="button" class="btn btn-default" id="dianming" onclick="dianming()">点名</button>
+            <div class="row clearfix">
+                <div class="col-md-3 column">
+                </div>
+                <div class="col-md-6 column">
+                    <div class="jumbotron">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <button type="button" class="btn btn-default" id="dianming_button">点名</button>
+                                <h3 id="student">
+                                    点击按钮随机点名
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 column">
+                </div>
+            </div>
         </div>
     </div>
-
-    <div>
-    <span>
-        <input type="text" id="student"></input>
-    </span>
-    </div>
 </div>
-
+<script type="application/dart" src="dianming.dart"></script>
+<script src="packages/browser/dart.js"></script>
 </body>
 </html>
