@@ -2,9 +2,9 @@ import 'dart:html';
 import 'dart:math' as math;
 void main() {
   
-  //querySelector(p).text='..';
+  //querySelector('p').
 
-  querySelector('#sample_text_id').text = "Click me!";
+  querySelector('#sample_text_id').text = "开始！";
   
   querySelector('#sample_text_id')    
     ..onClick.listen(reverseText);
@@ -40,6 +40,6 @@ void reverseText(MouseEvent event) {
   count[38]='李庆泉';
 
 
-  querySelector('#sample_text_id').text = '学号：' + number.toString() + '\n'+'姓名：' + count[k];
-
+  querySelector('#sample_text_id').text = '\n'+'姓名：' + count[k];
+  querySelector('#sample_studentid_id').text='学号：' + number.toString() ;
 }
