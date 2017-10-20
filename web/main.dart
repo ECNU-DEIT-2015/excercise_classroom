@@ -10,7 +10,7 @@ void main() {
 }
 
 void reverseText(MouseEvent event) {
-  var randomNumber = new math.Random().nextInt(38);
+  var randomNumber = new math.Random().nextInt(39);
   var nobleGases = {
 // Keys  Values
   1:   '韩庆慧', 2:   '谢函',
@@ -35,6 +35,7 @@ void reverseText(MouseEvent event) {
    };
 
   //我做了点修改
-  querySelector("#sample_text_id").text='学号：'+randomNumber.toString()+'  '+'姓名：'+nobleGases[randomNumber];
-
+  querySelector("#sample_text_id").text='学号：'+randomNumber.toString()
+  +' '+' '+' '+'姓名：'+nobleGases[randomNumber];
+  
 }
