@@ -1,8 +1,46 @@
-// Copyright (c) 2017, meflyup. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-
 import 'dart:html';
+import 'dart:math' as math;
+
+var stuInfor = [
+   '10154507101 韩庆慧',
+   '10154507102 谢函',
+   '10154507103 宋金阳',
+   '10154507104 李佳璇',
+   '10154507107 谢琪',
+   '10154507109 杨芙蓉',
+   '10154507110 荆泽宇',
+   '10154507112 黄大龙',
+   '10154507113 李敏',
+   '10154507114 刘冠群',
+   '10154507117 林凌',
+   '10154507119 颜欢',
+   '10154507121 彭茂源',
+   '10154507123 张思宁',
+   '10154507124 崔红洋',
+   '10154507127 汤夏颖',
+   '10154507132 苏颖晞',
+   '10154507134 姜宇轩',
+   '10154507138 于潇雪',
+   '10152510231 wqngze',
+];
+var s1=" ";
 
 void main() {
-  querySelector('#output').text = 'Your Dart app is running.';
+  querySelector('#sample_text_id')
+    ..text = 'Click me!'
+    ..onClick.listen(dianming);
+  querySelector('#sample_studentid_id')
+    ..text = '查看已点名单'
+    ..onClick.listen(nameli);
+}
+
+void dianming(MouseEvent event) {
+  var rdm = new math.Random();
+  int i = rdm.nextInt(stuInfor.length);
+  querySelector('#sample_text_id').text = stuInfor[i];
+  s1 = s1 + stuInfor[i];
+}
+
+void nameli(MouseEvent event) {
+  querySelector('#sample_studentid_id').text = "已点名单：" + s1;
 }
