@@ -7,30 +7,56 @@ body {
     margin: 15px;
   }
   
-  h1, p {
-    color: #333;
+  h1 {
+    color: #FA6914;
+    font-size: 26pt;
+    font-family: STKaiti;
+    text-align: center;
+    margin-top: 40px;
+  }
+  p {
+    color: #817F7F;
+    font-size: 12pt;
+    text-align: right;
+    letter-spacing:3px;
   }
   
   #sample_container_id {
-    width: 100%;
+    width: 600px;
     height: 400px;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
     border: 1px solid #ccc;
-    background-color: #fff;
+    background-color: rgba(154, 240, 161, 0.46);
   }
   
   #sample_text_id {
-    font-size: 24pt;
+    font-family: STKaiti;
+    font-size: 28pt;
     text-align: center;
-    margin-top: 140px;
+    margin-top: 120px;
     -webkit-user-select: none;
     user-select: none;
+    letter-spacing:4px;
   }
   #sample_studentid_id {
-    font-size: 24pt;
+    font-family: SimSun;
+    font-size: 20pt;
     text-align: center;
-    margin-top: 140px;
+    margin-top: 60px;
     -webkit-user-select: none;
     user-select: none;
+    letter-spacing:2px;
   }
-  
+
+  #sample_click_id {
+    font-family: STKaiti;
+    font-size: 18pt;
+    text-align: center;
+    margin-top: 40px;
+    -webkit-user-select: none;
+    user-select: none;
+    letter-spacing:2px;
+    color: #FA6914;
+  }

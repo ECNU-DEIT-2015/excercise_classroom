@@ -3,13 +3,16 @@
 import 'dart:html';
 import 'dart:math' as math;
 void main() {
-  querySelector('#sample_text_id') 
-  ..text = '开始点名!'
+  querySelector('#sample_click_id') 
+  ..text = '戳我点名'
   ..onClick.listen(reverseText);
+    
+  //querySelector('#sample_click_id') .text = '开始点名!';
+  //querySelector('#sample_click_id').onClick.listen(reverseText);
 }
 
 void reverseText(MouseEvent event) {
-  var nobleGases = {
+  var studentmap = {
 // Keys  Values
   0 :   '韩庆慧',
   1:   '宋金阳',
@@ -29,10 +32,10 @@ void reverseText(MouseEvent event) {
   15:   '张思宁',
   16:   '谢函',
   17:   '权宁真',
+  18:   '杨芙蓉',
 };
- var rand=new math.Random().nextInt(6);
-  querySelector('#sample_text_id').text = rand.toString()+' '+' '+nobleGases[rand].toString();
-
-  //我做了点修改
-  /*querySelector("#sample_text_id").text="new text";*/
+ var random=new math.Random().nextInt(19);
+ // 这里使用var random=new math.Random();random.nextInt(19);为什么不可以呢？（dart官网上查到的格式是这样的）
+  querySelector('#sample_text_id').text = '姓名:' + studentmap[random].toString();
+  querySelector('#sample_studentid_id').text='学号:' + random.toString();
 }
