@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-
-<!--
-  Copyright (c) 2017, meflyup. All rights reserved. Use of this source code
-  is governed by a BSD-style license that can be found in the LICENSE file.
--->
-
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-    <title>exercise</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="main.dart" type="application/dart"></script>
-    <script defer src="packages/browser/dart.js"></script>
+    <meta charset="UTF-8">
+    <title>自动点名系统</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script type="application/dart" src="DMing.dart"></script>
 </head>
-
 <body>
+   <p id="title">MMP自动点名系统</p>
+   <p id="class">班级</p>
+   <label class="select-label">
+       <select id="select">
+           <option value="class" id="select">一班</option>
+       </select>
+   </label>
 
-  <div id="output"></div>
-
+   <p id="text">学生</p>
+   <p id="select-name">请点击</p>
+   <p id="select-stunum">请点击</p>
+   <input class="but" id="click" type="button" value="开始">
 </body>
 </html>
