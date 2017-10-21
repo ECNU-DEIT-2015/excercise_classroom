@@ -18,8 +18,10 @@ h2{text-align:center}
      font-size: 30px}
 #anniu{text-align:center}
 #timestotal{text-align:center;
-           font-weight:bold}
+           font-weight:bold;
+           font-size: 18px}
 #evaluate{text-align:center;
           color:rgb(34, 5, 92);
+          font-size: 20px
         }
 #beijing{text-align:center;}
