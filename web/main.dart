@@ -2,31 +2,28 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:html';
-import 'dart:math';
+import 'dart:math' as math;
 
 
 void main() {
-  
-  var randomNumber;
-  randomNumber = new math.Random().nextInt(17);
-  var shuzi = new Random();
- var list = List var name; 
- var list = List var number;
- name[1] = '韩庆慧' ;       number[1]=10154507101;
-  name[2] = '谢函' ;        number[2]=10154507102;
-  name[3]= '宋金阳' ;       number[3]=10154507103;
-  name[4] = '李佳璇' ;      number[4]=10154507104;
-  name[5] = '此人转专业' ;  number[5]=10154507105;
-  name[6] = '此人转专业' ;  number[6]=10154507106;
-  name[7] = '谢琪' ;        number[7]=10154507107;
-  name[8] = '此人转专业' ;   number[8]=10154507108;
-  name[9] = '杨芙蓉' ;      number[9]=10154507109;
-  name[10] = '荆泽宇' ;     number[10]=101545071010;
-  name[11] = '彭丽' ;       number[11]=101545071011;
-  name[12] = '黄大龙' ;     number[12]=101545071012;
-  name[13]= '李敏' ;        number[13]=10154507113;
-  name[14]= '刘冠群' ;      number[14]=10154507114;
-
-  //querySelector('#output').text = 'Your Dart app is running.';
- querySelector("#sample_text_id").text='学号：101545071'+randomNumber.toString()+'  '+'姓名：'+'name'+randomNumber.toString(shuzi);
+  querySelector('#name')
+    ..text = '点击此处随机点名'
+    ..onClick.listen(reverseText);
 }
+void reverseText(MouseEvent event)
+{ var idnumber=new math.Random().nextInt(38);
+  var studentname = new List<String>();
+studentname.addAll([
+  '韩庆慧', '谢函', '宋金阳','李佳璇','此人已转专业','此人已转专业',
+  '谢琪','此人已转专业','杨芙蓉','荆泽宇','彭丽','黄大龙','李敏',
+  '刘冠群','此人已转专业','此人已转专业','林凌',
+'此人已转专业','颜欢','此人已转专业','此人已转专业','朋秋霞',
+'张思宁','崔红洋','董紫琪','李雨辰','汤夏颖','武美玖',
+'吴兵可','此人已转专业','任子佳','苏颖晞','宋婷袅',
+'姜宇轩','此人已转专业','周雨萌','此人已转专业','于潇雪']);
+querySelector("#studentid").text='学号：  101545071'+(idnumber+1).toString();
+querySelector("#name").text='姓名：'+studentname[idnumber];
+}
+  
+
+
