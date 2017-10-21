@@ -7,6 +7,18 @@ html, body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-h1{background-color:rgba(7, 7, 7, 0.06)
-   position relative;
-   height:36px;}
+h1{ text-align:center;
+    background-color: #F38383;}
+h2{text-align:center}
+#studentid{text-align:center;
+          color:#FD0707;
+          font-size: 36px}
+#name{text-align:center;
+     color:#FD0707;
+     font-size: 36px}
+#anniu{text-align:center}
+#timestotal{text-align:center;
+           font-weight:bold}
+#evaluate{text-align:center;
+          color:#5D12E9;
+        }
