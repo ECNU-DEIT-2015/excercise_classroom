@@ -97,7 +97,7 @@ studentname.addAll([
    '压轴班长大大！美丽全能的小雪儿呀~',
    '此人已转专业'
    ]);
-if(idnumber>=10){querySelector("#studentid").text='学号：  101545071'+(idnumber+1).toString();}
+if(idnumber>=9){querySelector("#studentid").text='学号：  101545071'+(idnumber+1).toString();}
   else {querySelector("#studentid").text='学号：  1015450710'+(idnumber+1).toString();}
 querySelector("#name").text='姓名：'+studentname[idnumber];
 querySelector("#evaluate").text='了解一下这位同学的情况吧:      '+eimformation[idnumber];
