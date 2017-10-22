@@ -33,7 +33,9 @@ void main() {
     ..text = '查看已点名单'
     ..onClick.listen(nameli);
 }
-
+/**
+ * by teacher:很好，如果继续改进，可以用一个结构来保留已点名信息而不是使用字符串。结构更便于遍历和索引。
+ */
 void dianming(MouseEvent event) {
   var rdm = new math.Random();
   int i = rdm.nextInt(stuInfor.length);
