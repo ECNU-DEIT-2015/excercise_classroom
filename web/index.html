@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>自动点名系统</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
+    <!-- 主入口如果是DMing.dart，你的DMing.dart在哪里 -->
     <script type="application/dart" src="DMing.dart"></script>
 </head>
+
 <body>
-   <p id="title">MMP自动点名系统</p>
-   <p id="class">班级</p>
-   <label class="select-label">
+    <p id="title">MMP自动点名系统</p>
+    <p id="class">班级</p>
+    <!-- id是作为唯一标识符，你的代码中有多个id是“select” -->
+    <label class="select-label">
        <select id="select">
            <option value="class" id="select">一班</option>
        </select>
    </label>
 
-   <p id="text">学生</p>
-   <p id="select-name">请点击</p>
-   <p id="select-stunum">请点击</p>
-   <input class="but" id="click" type="button" value="开始">
+    <p id="text">学生</p>
+    <p id="select-name">请点击</p>
+    <p id="select-stunum">请点击</p>
+    <input class="but" id="click" type="button" value="开始">
 </body>
+
 </html>
