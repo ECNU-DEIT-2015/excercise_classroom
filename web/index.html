@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-
-<!--
-  Copyright (c) 2017, meflyup. All rights reserved. Use of this source code
-  is governed by a BSD-style license that can be found in the LICENSE file.
--->
-
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-    <title>exercise</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="main.dart" type="application/dart"></script>
-    <script defer src="packages/browser/dart.js"></script>
+    <meta charset="UTF-8">
+    <title>自动点名系统</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script type="application/dart" src="main.dart"></script>
 </head>
-
 <body>
+   <p id="title">姜小姜自动点名系统</p>
+   <p id="select-class">请选择课程</p>
+   <label class="select-label">
+       <select id="select">
+           <option value="class1" id="select1">Class1</option>
+           <option value="class2" id="select2">Class2</option>
+       </select>
+   </label>
 
-  <div id="output"></div>
-
+   <p id="text1">被点到的同学</p>
+   <p id="select-name">请点击点名按钮</p>
+   <p id="select-studentnum">请点击点名按钮</p>
+   <input class="but" id="clickBtn" type="button" value="点名">
 </body>
 </html>
