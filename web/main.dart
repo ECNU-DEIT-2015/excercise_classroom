@@ -3,7 +3,7 @@ import 'dart:math' show Random;
 
 
 void main() {
-
+//你对应的html中有你要查找的元素吗？
   querySelector('#sample_text_id')
     ..text = '开始点名!'
     ..onClick.listen(makeCall);
