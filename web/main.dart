@@ -6,7 +6,7 @@ import "dart:math";
 
 void main() {
   querySelector('#output').text = 'Your Dart app is running.';
-
+//本函数已经被丢弃了，我的版本无法支持。你的应用无法顺利执行
   var startBtn = query(".class_but");
   startBtn.onClick.listen((e) {
     start();
