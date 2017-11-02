@@ -15,11 +15,22 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="main.dart" type="application/dart"></script>
     <script defer src="packages/browser/dart.js"></script>
+    <style>
+    .div-a{ float:left;width:63%;border:10px} 
+    .div-b{ float:left;width:37%;border:10px}
+    .div-b:hover{
+     color: #C74747;
+     font-weight:bold;
+     font-size: 30px;
+     }
+    </style>
+    <title>鼠标悬停</title>
 </head>
 
 <body>
-  <div>
-    <p id="beijing" ><image src="images/biaoti.png" width=1366 height=300></image></p>
+
+  <p id="beijing" ><image src="images/biaoti.png" width=1366 height=300></image></p>
+  <div class="div-a">
     <h2>在课堂开始之前，让我们先来进行点名小游戏吧！</h2>
     <p id ="studentid"> 学号：点到几就是几 </p>
     <p id="name">姓名：点到谁就是谁</p>
@@ -28,9 +39,9 @@
     <p id="anniu" ><image src="images/dianjianniu.png"></image></p>
    </div>
 
-  <div>
-    <ul id="namelist">已点学生列表</ul>
-    <button id ="delete" type = "button" ><image src="images/delete.jpg" width=100 height=80></image> 全部删除</button > 
+  <div class="div-b"  title="直接点击姓名可移除该学生哦">这里列出了被点到的学生名单哦
+    <ul id="namelist"></ul>
+    <p id ="delete" ><image src="images/delete.png" width=250 height=100></image> </p>
   </div>
 
   <link rel="stylesheet" href="styles.css">

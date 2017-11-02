@@ -15,9 +15,11 @@ void main() {
     ..onClick.listen(dianjishijian);
     times.addAll([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
     studentlist=querySelector("#namelist");
-    //studentlist.onChange.listen(addelemnt);
-   var deletestudent=querySelector("#delete");
-   deletestudent.onClick.listen((e)=>studentlist.children.clear());
+    studentlist.onChange.listen(addelemnt);
+   querySelector("#delete")
+   ..id
+   ..onClick.listen(deleteelemnt);
+   
 }
 
 void addelemnt(Event event)
@@ -26,6 +28,11 @@ void addelemnt(Event event)
   newnamelist.text=getsudentname;
   studentlist.children.add(newnamelist);
   newnamelist.onClick.listen((e)=>newnamelist.remove());
+ }
+
+ void deleteelemnt(Event event)
+ {
+  studentlist.children.clear(); 
  }
 
 void dianjishijian(MouseEvent event)
@@ -98,6 +105,7 @@ studentname.addAll([
    '软院的同学一名~',
    '这位软院的同学去年也选了我们的Java课呢~'
    ]);
+   
 querySelector("#studentid").text='学号：  '+studentname[idnumber+20];
 querySelector("#name").text='姓名：'+studentname[idnumber];
 querySelector("#evaluate").text='了解一下这位同学的情况吧:      '+eimformation[idnumber];
