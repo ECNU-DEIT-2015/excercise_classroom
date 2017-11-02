@@ -1,40 +1,77 @@
-body {
-  background-color: #F8F8F8;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.2em;
-  margin: 15px;
+#title{
+  font-size: 35px;
+  /*position: absolute;*/
+  left: 300px;
+  top:50px;
+  text-align:center
 }
 
-#header {
-  background-color:black;
-  color:white;
-  text-align:center;
-  padding:5px;
-}
-
-.widgets {
-  padding-bottom: 20pt;
-  text-align: center;
+#select-name{
   font-size: 20px;
-
+  /*position: absolute;*/
+  left: 500px;
+  top:235px;
+  /*background-color: lightgrey;*/
+  text-align:center
 }
 
-.greeting {
-  color: black;
-  font-family: sans-serif;
-  padding: 0.5em;
-  text-align: center;
-  font-size: 14pt;
+#select-id{
+  font-size: 20px;
+  /*position: absolute;*/
+  left: 500px;
+  top:235px;
+  /*background-color: lightgrey;*/
+  text-align:center
 }
-.name {
-  color: black;
-  background: white;
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  font-size: 25pt;
-  padding-top: 1.0em;
-  padding-bottom: 0.7em;
-  height: 16px;
+
+#text1{
+  font-size: 20px;
+  /*position: absolute;*/
+  left: 345px;
+  top:235px;
+  text-align:center
 }
+
+#clickButton{
+  left: 200px;
+  top:100px;
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  text-align:center
+}
+
+#delete-all{
+  left: 200px;
+  top:100px;
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  text-align:center
+}
+
+#nav {
+  line-height:30px;
+  background-color:#eeeeee;
+  top:200px;
+  height:500px;
+  width:300px;
+  float:left;
+  padding:5px; 
+  text-align:center;
+  margin-left:10px;
+  overflow-y:scroll; 
+  overflow-x:scroll;}
+
+#section {
+  width:800px;
+  float:left;
+  padding:10px; 
+}
+
+#Name{
+  background-color:white;   
+  padding:5px; 
+  text-align:center
+}
+
