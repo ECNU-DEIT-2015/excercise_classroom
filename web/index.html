@@ -4,25 +4,27 @@
   <head>
     <meta charset="utf-8">
     <title>Myconference</title>
+    <p id="beijing" ><image src="images/beijing.png"></image></p>
     <link rel="stylesheet" href="index.css">
-  <body>
-    <h1>随机点名小程序</h1>
-
-    <p>——web教育应用设计与开发专属</p>
-    <div id="sample_container_id">
-      <p id="sample_click_id">加载中~~</p>
-      <p id="#sample_click_id"></p> 
-      <p id="sample_text_id"></p>
-      <p id="sample_studentid_id"></p>
-     
-      
-    </div>
     <script type="application/dart" src="index.dart"></script>
     <script src="packages/browser/dart.js"></script>
-  </body>
+  </head>
+
+  <body>
+      <div class="container">
+      <div class="left"style='float:left;width:58%;height:600px'>
+          <p id="name">今天的幸运儿</p>
+          <p id="studentid_id">会有哪些同学呢？</p>
+          <p id="anniu" ><image src="images/dianji.png"></image></p>
+          <p id="button" ><image src="images/button.png"></image></p>  
+      </div>
+      <div class="right"style='height:600px;'>
+          <ul id="to-do-list">
+          </ul>
+      </div>
+      </div>
   <link rel="stylesheet" href="styles.css">
   <script defer src="main.dart" type="application/dart"></script>
   <script defer src="packages/browser/dart.js"></script>
-</head>
-
+</body>
 </html>

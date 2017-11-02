@@ -1,5 +1,5 @@
 body {
-    background-color: #F8F8F8;
+    background-color: rgba(252, 237, 204, 0.93);
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -12,7 +12,7 @@ body {
     font-size: 26pt;
     font-family: STKaiti;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
   }
   p {
     color: #817F7F;
@@ -20,43 +20,40 @@ body {
     text-align: right;
     letter-spacing:3px;
   }
+  #beijing{text-align:right;}
+  #list{text-align:center}
+  #to-do-list {
+    font-family: YouYuan;
+    font-size: 14pt;
+    color: rgba(96, 149, 155, 0.93);
+    text-align: center;
+    list-style-type: none;
+    line-height:30px;
   
-  #sample_container_id {
-    width: 600px;
-    height: 400px;
-    position: absolute;
-    left: 50%;
-    margin-left: -300px;
-    border: 1px solid #ccc;
-    background-color: rgba(154, 240, 161, 0.46);
   }
-  
-  #sample_text_id {
+  #anniu{
+    text-align:right;
+  }  
+  #button{
+    text-align:right;
+  } 
+  #name {
     font-family: STKaiti;
     font-size: 28pt;
-    text-align: center;
-    margin-top: 120px;
+    text-align: right;
+    margin-top: 40px;
     -webkit-user-select: none;
     user-select: none;
     letter-spacing:4px;
   }
-  #sample_studentid_id {
-    font-family: SimSun;
+  #studentid_id {
+    font-family: STKaiti;
     font-size: 20pt;
-    text-align: center;
+    text-align: right;
     margin-top: 60px;
     -webkit-user-select: none;
     user-select: none;
     letter-spacing:2px;
   }
 
-  #sample_click_id {
-    font-family: STKaiti;
-    font-size: 18pt;
-    text-align: center;
-    margin-top: 40px;
-    -webkit-user-select: none;
-    user-select: none;
-    letter-spacing:2px;
-    color: #FA6914;
-  }
+

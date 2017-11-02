@@ -2,40 +2,68 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 import 'dart:html';
 import 'dart:math' as math;
+UListElement toDoList;
+
 void main() {
-  querySelector('#sample_click_id') 
-  ..text = '戳我点名'
-  ..onClick.listen(reverseText);
-    
-  //querySelector('#sample_click_id') .text = '开始点名!';
-  //querySelector('#sample_click_id').onClick.listen(reverseText);
+  querySelector('#anniu').onClick.listen(reverseText);  
+  toDoList=querySelector('#to-do-list'); 
+  querySelector('#button').onClick.listen(clear);     
+}
+
+void clear(Event e){
+  toDoList.children.clear();
 }
 
 void reverseText(MouseEvent event) {
   var studentmap = {
 // Keys  Values
-  0 :   '韩庆慧',
-  1:   '宋金阳',
-  2:   '李佳璇',
-  3:   '林凌',
-  4:   '刘冠群',
-  5:   '汤夏颖',
-  6 :   '彭茂源',
+  0:   '韩庆慧',
+  1:   '谢函',
+  2:   '宋金阳',
+  3:   '李佳璇',
+  4:   '谢琪',
+  5:   '杨芙蓉',
+  6:   '荆泽宇',
   7:   '黄大龙',
-  8:   '荆泽宇',
-  9:   '于潇雪',
-  10:   '姜宇轩',
-  11:   '苏颖晞',
-  12:   '吴清泽',
-  13:   '李敏',
-  14:   '崔红洋',
-  15:   '张思宁',
-  16:   '谢函',
-  17:   '权宁真',
-  18:   '杨芙蓉',
+  8:   '李敏',
+  9:   '刘冠群',
+  10:  '林凌',
+  11:   '彭茂源',
+  12:   '张思宁',
+  13:   '崔红洋',
+  14:   '汤夏颖',
+  15:   '苏颖晞',
+  16:   '姜宇轩',
+  17:   '于潇雪',
+  18:   '权宁真',
+  19:   '吴清泽',
+  20:   '10154507101',
+  21:   '10154507102',
+  22:   '10154507103',
+  23:   '10154507104',
+  24:   '10154507107',
+  25:   '10154507109',
+  26:   '10154507110',
+  27:   '10154507112',
+  28:   '10154507113',
+  29:   '10154507114',
+  30:   '10154507117',
+  31:   '10154507121',
+  32:   '10154507123',
+  33:   '10154507124',
+  34:   '10154507127',
+  35:   '10154507132',
+  36:   '10154507134',
+  37:   '10154507138',
+  38:   '10152510231',
+  39:   '10152510133',
 };
  var random=new math.Random().nextInt(19);
- // 这里使用var random=new math.Random();random.nextInt(19);为什么不可以呢？（dart官网上查到的格式是这样的）
-  querySelector('#sample_text_id').text = '姓名:' + studentmap[random].toString();
-  querySelector('#sample_studentid_id').text='学号:' + random.toString();
+  querySelector('#name').text = '姓名:' + studentmap[random].toString();
+  querySelector('#studentid_id').text='学号:' +  studentmap[random+20].toString();
+  var newToDO=new LIElement();
+  newToDO.text=studentmap[random].toString();
+  toDoList.children.add(newToDO);
+  newToDO.onClick.listen((e)=>newToDO.remove());
 }
+
