@@ -4,6 +4,9 @@
 import 'dart:html';
 import 'dart:math' as math;
 var times= new List<int>();
+String getsudentname=' ';
+UListElement studentlist;
+
 
 
 void main() {
@@ -11,11 +14,25 @@ void main() {
     ..id
     ..onClick.listen(dianjishijian);
     times.addAll([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+    studentlist=querySelector("#namelist");
+    //studentlist.onChange.listen(addelemnt);
+   var deletestudent=querySelector("#delete");
+   deletestudent.onClick.listen((e)=>studentlist.children.clear());
 }
+
+void addelemnt(Event event)
+ {
+  var newnamelist=new LIElement();
+  newnamelist.text=getsudentname;
+  studentlist.children.add(newnamelist);
+  newnamelist.onClick.listen((e)=>newnamelist.remove());
+ }
+
 void dianjishijian(MouseEvent event)
-{ var idnumber=new math.Random().nextInt(20);
-  var studentname = new List<String>();
+{ 
+  var idnumber=new math.Random().nextInt(20);
   var eimformation = new List<String>();
+  var studentname  = new List<String>();
 
 studentname.addAll([
   '韩庆慧',
@@ -86,7 +103,15 @@ querySelector("#name").text='姓名：'+studentname[idnumber];
 querySelector("#evaluate").text='了解一下这位同学的情况吧:      '+eimformation[idnumber];
 times[idnumber]++;
 querySelector("#timestotal").text='该同学在此堂课上已被点名：'+times[idnumber].toString()+'次';
+getsudentname=studentname[idnumber];
+addelemnt(event);
 }
+
+
+
+
+
+ 
   
 
 
