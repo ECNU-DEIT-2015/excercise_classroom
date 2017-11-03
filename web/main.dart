@@ -3,10 +3,31 @@
 
 import 'dart:html';
 import 'dart:math' as math;
+UListElement toDoList;
+UListElement toDotableList;
+ButtonElement deleteAll;
+ButtonElement callName;
+String studentname;
 void main() {
   querySelector('#sample_text_id')
     ..text = '点击点名'
     ..onClick.listen(reverseText);
+    
+toDoList = querySelector('#sample_list_id');  
+toDoList.onChange.listen(addToDoItem);
+deleteAll= querySelector('#delete-all'); 
+deleteAll.onClick.listen(deleteAllElements);
+callName= querySelector('#call-name'); 
+callName.onClick.listen(reverseText);
+}
+
+void addToDoItem(Event e){
+ var nextToDo = new LIElement();
+nextToDo.text=studentname;
+toDoList.children.add(nextToDo); 
+}
+void deleteAllElements(Event e) {
+  toDoList.children.clear();
 }
 
 void reverseText(MouseEvent event) {
@@ -34,8 +55,12 @@ void reverseText(MouseEvent event) {
   37:   '徐晟伟',     38:   '于潇雪', 
    };
 
+studentname=nobleGases[randomNumber];
+
   //我做了点修改
   querySelector("#sample_text_id").text='学号：'+randomNumber.toString()
   +' '+' '+' '+'姓名：'+nobleGases[randomNumber];
   
+  addToDoItem(event);
+
 }

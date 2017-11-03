@@ -23,7 +23,7 @@ body {
     color: rgb(55, 57, 61);
   }
   #sample_container_id {
-    width: 100%;
+    width: 70%;
     height: 400px;
     position: relative;
     border: 1px solid #ccc;
@@ -37,12 +37,35 @@ body {
     -webkit-user-select: none;
     user-select: none;
   }
-  #sample_studentid_id {
-    font-size: 24pt;
+  #sample_list_id {
+    font-size: 12pt;
     text-align: center;
-    margin-top: 140px;
+    margin-top: 20px;
     -webkit-user-select: none;
     user-select: none;
   }
- 
-  
+ table {
+  background-color: #5180D8;
+  font-family: 'Open Sans', sans-serif;
+  width: 25%;
+  height: 50px;
+  word-spacing: normal;
+  position: absolute;
+  top: 10px;
+  left: 920px;
+	height: auto;
+ }
+ .text {
+	font-family: "宋体", "楷体";
+	font-size: 14px;
+	font-weight: normal;
+	color: #000;
+}
+#call-name {
+  font-size: 14pt;
+  text-align: center;
+  margin-top: 140px;
+  margin-left: 500px;
+  -webkit-user-select: none;
+  user-select: none;
+}
