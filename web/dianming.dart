@@ -1,73 +1,211 @@
 import 'dart:html';
 import 'dart:math';
+import 'dart:io';
+import 'dart:convert';
 
+String xxstring ="""
+{
+  "student":[
+        {
+            "id":"10152510284",
+            "name":"吴一凡",
+            "gender":"f"
+        },
+        {
+            "id":"10152510277",
+            "name":"王慧琪",
+            "gender":"f"
+        },
+        {
+            "id":"10152510211",
+            "name":"李子澜",
+            "gender":"f"
+        },
+        {
+          "id":"10152130248",
+          "name":"余天昊",
+          "gender":"m"
+        },
+        {
+          "id":"10152130227",
+          "name":"张伦",
+          "gender":"m"
+        },
+        {
+          "id":"10152130206",
+          "name":"郭东瑞",
+          "gender":"m"
+        },
+        {
+            "id":"10152510283",
+            "name":"吴一",
+            "gender":"f"
+        },
+        {
+            "id":"10152510273",
+            "name":"王琪",
+            "gender":"f"
+        },
+        {
+            "id":"10152514211",
+            "name":"李澜",
+            "gender":"f"
+        },
+        {
+          "id":"10152130f248",
+          "name":"余天",
+          "gender":"m"
+        },
+        {
+          "id":"101521d30227",
+          "name":"张伦发",
+          "gender":"m"
+        },
+        {
+          "id":"101521s0206",
+          "name":"郭瑞",
+          "gender":"m"
+        }
+    ]
+}
+""";
 
-var students = [
-'10142510227 王栎雯',
-'10152510273 秦妤欣',
-'10152510278 王炎',
-'10152510280 柏梦梦',
-'10140510305 华丽萍',
-'10152510284 吴一凡',
-'10152510289 陈宁',
-'10152510268 顾琦君',
-'10152510264 杨思嘉',
-'10152510228 徐嘉欣',
-'10152510248 李云青',
-'10152510270 王慧琪',
-'10152510277 沈庭杉',
-'10152510223 高雯怡',
-'10152510243 李梦琪',
-'10152510246 陈思睿',
-'10152510202 郭舒怡',
-'10152510221 李子澜',
-'10152510239 邱梦华',
-'10152510245 吴瑞英',
-'10152510206 陈佳宁',
-'10152510211 殷青蓝',
-'10152510218 唐佳琪',
-'10152510219 徐婧仪',
-'10152510233 谢雪莹',
-'10152510207 张笑艾',
-'10152510210 尤豪谦',
-'10152510214 郑舒文',
-'10152510216 王鑫唐',
-'10144304126 张祎',
-'10144304107 文诗韵',
-'10152510134 孙雪纯',
-'10152510169 张纯',
-'10152510111 万佳怡',
-'10152510120 强凯雯',
-'10152510132 马明月',
-'10152510124 石佳怡',
-'10152510126 后琪',
-'10152510146 李琳',
-'10152510148 何林梓',
-'10152510113 吴佳雯',
-'10152510110 倪子金',
-'10152510119 徐紫琦',
-'10152510131 汤韫铭',
-'10152510147 陈江容',
-'10152510163 徐怡婕',
-'10152510153 胡依敏',
-'10152510187 赵雪',
-'10152510178 张欣蕾',
-'10152510106 吕宛珊',
-'10152510108 陈沁蕙',
-'10152510115 张雯',
-'10152510116 郭星宇',
-'10152510172 姜晨怡',
-'10152510175 曹苗',
-'10152510176 郭苏葳',
-'10152510184 王黄婕',];
-
+List list;
+Map stu = new Map();
 
 void main() async{
-	querySelector('#dianming_button')
+ 
+  // querySelector("#display").hidden = true;
+  list = JSON.decode(xxstring)["student"];
+	querySelector('#dianming')
     ..onClick.listen(dianming);
+
+  querySelector("#remove")
+    ..onClick.listen(delete);
+
+  querySelector("#nansheng")
+    ..onClick.listen(nansheng);
+
+  querySelector("#nvsheng")
+    ..onClick.listen(nvsheng);
 }
 
-void dianming(MouseEvent event) {
+void dianming(MouseEvent event)
+{
+  querySelector("#display").hidden = false;
   var rng = new Random();
-  querySelector('#student').text = students[rng.nextInt(students.length)];
+  Map s = list[rng.nextInt(list.length)];
+  String name = s["name"];
+  querySelector('#name').text = s['name'];
+  TableElement table = query("#table");
+
+  if(stu[s['id']] == null)
+  {
+    stu[s['id']] = 1;
+    TableRowElement row = table.insertRow(1);
+
+    row.insertCell(0)
+      ..text = s['id'];
+
+    row.insertCell(1)
+      ..text = s['name'];
+
+  }
+  else
+  {
+    stu[s['id']] += 1;
+  }
+  querySelector("#count").text = stu[s['id']];
+
+  ImageElement img = querySelector("#pic");
+  if(s['gender'] == 'f')
+  {
+    img.src = "http://pic29.nipic.com/20130525/7487939_155123274150_2.jpg";
+  }
+  else{
+    img.src = "https://img00.deviantart.net/e2ed/i/2011/254/f/8/l_death_note_tshirt_design_by_yoonhee-d49iw6y.jpg"; 
+  }
+  
+}
+
+void nansheng(MouseEvent event)
+{
+  querySelector("#display").hidden = false;
+  var rng = new Random();
+  Map s = list[rng.nextInt(list.length)];
+  while(s['gender'] != 'm')
+  {
+    s = list[rng.nextInt(list.length)];
+  }
+  
+  querySelector('#name').text = s['name'];
+  TableElement table = query("#table");
+
+  if(stu[s['id']] == null)
+  {
+    stu[s['id']] = 1;
+    TableRowElement row = table.insertRow(1);
+
+    row.insertCell(0)
+      ..text = s['id'];
+
+    row.insertCell(1)
+      ..text = s['name'];
+
+  }
+  else
+  {
+    stu[s['id']] += 1;
+  }
+  querySelector("#count").text = stu[s['id']];
+
+  ImageElement img = querySelector("#pic");
+  img.src = "https://img00.deviantart.net/e2ed/i/2011/254/f/8/l_death_note_tshirt_design_by_yoonhee-d49iw6y.jpg"; 
+  
+}
+
+void nvsheng(MouseEvent event)
+{
+  querySelector("#display").hidden = false;
+  var rng = new Random();
+  Map s = list[rng.nextInt(list.length)];
+  while(s['gender'] != 'f')
+  {
+    s = list[rng.nextInt(list.length)];
+  }
+  
+  querySelector('#name').text = s['name'];
+  TableElement table = query("#table");
+
+  if(stu[s['id']] == null)
+  {
+    stu[s['id']] = 1;
+    TableRowElement row = table.insertRow(1);
+
+    row.insertCell(0)
+      ..text = s['id'];
+
+    row.insertCell(1)
+      ..text = s['name'];
+
+  }
+  else
+  {
+    stu[s['id']] += 1;
+  }
+  querySelector("#count").text = stu[s['id']];
+
+  ImageElement img = querySelector("#pic");
+  img.src = "http://pic29.nipic.com/20130525/7487939_155123274150_2.jpg"; 
+}
+
+void delete(MouseEvent event)
+{
+  TableElement t = query("#table");
+   for(var i=0; i<stu.length; i++)
+   {
+     t.deleteRow(1);
+   }
+   stu.clear();
+   dianmingstudent.clear();
 }
