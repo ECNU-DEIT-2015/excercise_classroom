@@ -11,11 +11,11 @@ void main() {
   toDoStart = querySelector('#click');
   toDoStart.onClick.listen(rollcall);
   toDoList = querySelector('#to-do-list');
-  toDoDelete = querySelector("#delete");
-  toDoDelete.onClick.listen(deleteText);
+  toDoDelete = querySelector('#delete');
+  toDoDelete.onClick.listen(delete);
 }
 
-void deleteText(MouseEvent event) {
+void delete(MouseEvent event) {
   toDoList.children.clear();
 }
 
