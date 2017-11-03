@@ -1,56 +1,79 @@
-// Copyright (c) 2017, meflyup. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
+//点名程序
+//名单中有的同学已经转系 
 
 import 'dart:html';
-import 'dart:math' as math;
+import 'dart:math' as math; 
+UListElement alreadyNamed;
+ButtonElement start;
+ButtonElement deleteAll;
+String aName;
 
+void main() 
+{ 
+ querySelector('#sample_text_id') 
+ ..text = '开始点名' 
+ ..onClick.listen(nameList); 
+ alreadyNamed = querySelector('#list_id');  
+ alreadyNamed.onChange.listen(addList);
+ deleteAll= querySelector('#delete'); 
+ deleteAll.onClick.listen(deleteName);
+} 
 
-
-void main() {
-
-   var name = new Map();
-    name[0] = '韩庆慧';
-    name[1] = '谢函';
-    name[2] = '宋金阳';
-    name[3] = '李佳璇';
-    name[5] = '宋利';
-    name[6] = '谢琪';
-    name[7] = '张珑川';
-    name[8] = '杨芙蓉';
-    name[9] = '荆泽宇';
-    name[10] = '彭丽';
-    name[11] = '黄大龙';
-    name[12] = '李敏';
-    name[13] = '刘冠群';
-    name[14] = '陈冠雄';
-    name[15] = '郑素清';
-    name[16] = '林凌';
-    name[17] = '庄子凯';
-    name[18] = '颜欢';
-    name[19] = '宗雨';
-    name[20] = '彭茂源';
-    name[21] = '朋秋霞';
-    name[22] = '张思宁';
-    name[23] = '崔红洋';
-    name[24] = '董紫琪';
-    name[25] = '李雨辰';
-    name[26] = '汤夏颖';
-    name[27] = '武美玖';
-    name[28] = '吴兵可';
-    name[29] = '祁馨禾';
-    name[30] = '任子佳';
-    name[31] = '苏颖晞';
-    name[32] = '宋婷袅';
-    name[33] = '姜宇轩';
-    name[34] = '刘思延';
-    name[35] = '周雨萌';
-    name[36] = '徐晟炜';
-    name[37] = '于潇雪';
-    name[38] = '李庆泉';  
-
-   var c = new math.Random().nextInt(38);
-   var id = c+10154507101;
-   querySelector('#output').text = 'the StudentID is $id, and the name is'+' '+ name[c].toString();
-
+void addList(Event e){
+ var addList = new LIElement();
+ addList.text=aName;
+ alreadyNamed.children.add(addList); 
 }
 
+
+void deleteName(Event e) {
+  alreadyNamed.children.clear();
+}
+
+void nameList(MouseEvent event) { 
+var randomNumber = new math.Random().nextInt(39);
+var id= randomNumber + 10154507100;
+var name = { 
+    1:  '韩庆慧' ,
+    2:  '谢函',
+    3:  '宋金阳',
+    4:  '李佳璇',
+    6:  '宋利',
+    7:  '谢琪',
+    8:  '张珑川',
+    9:  '杨芙蓉',
+    10: '荆泽宇',
+    11: '彭丽',
+    12: '黄大龙',
+    13: '李敏',
+    14: '刘冠群',
+    15: '陈冠雄',
+    16: '郑素清',
+    17: '林凌',
+    18: '庄子凯',
+    19: '颜欢',
+    20: '宗雨',
+    21: '彭茂源',
+    22: '朋秋霞',
+    23: '张思宁',
+    24: '崔红洋',
+    25: '董紫琪',
+    26: '李雨辰',
+    27: '汤夏颖',
+    28: '武美玖',
+    29: '吴兵可',
+    30: '祁馨禾',
+    31: '任子佳',
+    32: '苏颖晞',
+    33: '宋婷袅',
+    34: '姜宇轩',
+    35: '刘思延',
+    36: '周雨萌',
+    37: '徐晟炜',
+    38: '于潇雪',
+    39: '李庆泉',
+}; 
+ querySelector("#sample_text_id").text='被选中的学号是'+' '+id.toString() +' '+', 被选中的同学是'+name[randomNumber] + '。'; 
+ aName=name[randomNumber];
+ addList(event);
+} 
