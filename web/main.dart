@@ -38,5 +38,4 @@ void rollcall(MouseEvent event) {
   var newToDo = new LIElement();
   newToDo.text= studentlist[random].toString();
   toDoList.children.add(newToDo);
-  newToDo.onClick.listen((e)=>newToDo.remove());
 }
