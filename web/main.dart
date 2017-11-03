@@ -7,6 +7,9 @@ void main() {
   querySelector('#sample_text_id')
     ..text = '开始点名!'
     ..onClick.listen(makeCall);
+  querySelector('#1')
+    ..text = '清除'
+    ..onClick.listen(removal);
 }
 
 
@@ -26,7 +29,15 @@ void main() {
     ];
 
 
+    
     var ad=new Random();
     querySelector('#sample_text_id').text = name[ad.nextInt(name.length)];
+
+    var newToDo=new LIElement();
+    for(int i=1;i<10;i++)     newToDo.children.add(#sample_text_id.text);
+    querySelector('#done_text_id').text = newToDo;
+
   }
+void removal(MouseEvent event)
+     { #done_text_id.text.removal;}
 
