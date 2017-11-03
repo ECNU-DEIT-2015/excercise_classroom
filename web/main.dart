@@ -1,23 +1,44 @@
 import 'dart:html';
 import 'dart:math' as math;
+
+InputElement toDoInput;
+UListElement toDoList;
+ButtonElement toDoStart, toDoDelete;
+
 void main() {
   
   //querySelector('p').
 
   querySelector('#sample_text_id').text = "开始！";
   
-  querySelector('#sample_text_id')    
-    ..onClick.listen(reverseText);
-  
+  toDoDelete = querySelector("#to-do-delete");
+  toDoStart = querySelector('#to-do-start');
+  //querySelector('#sample_text_id')    
+  //  ..onClick.listen(reverseText);
+  toDoStart.onClick.listen(reverseText);
+
+  toDoInput = querySelector('#to-do-input');
+  toDoList = querySelector('#to-do-list');
+  toDoInput.onChange.listen(addToDoItem);
+  toDoDelete.onClick.listen(deleteText);
   
 }
+void addToDoItem(Event e){
 
+  var newToDo = new LIElement();
+  newToDo.text= toDoInput.value;
+  toDoInput.value='';
+  toDoList.children.add(newToDo);
+
+}
 void reverseText(MouseEvent event) {
   
   var k = new math.Random().nextInt(38);
   var number=10154507101+k;
-  
+  var newToDo = new LIElement();  
+  var list = new List();
   var count = new Map();
+
   count[0]='韩庆慧'; count[1]='谢函';
   count[2]='宋金阳'; count[3]='李佳璇';
   count[4]='null'; count[5]='宋利';
@@ -42,4 +63,13 @@ void reverseText(MouseEvent event) {
 
   querySelector('#sample_text_id').text = '\n'+'姓名：' + count[k];
   querySelector('#sample_studentid_id').text='学号：' + number.toString() ;
+
+  newToDo.text= count[k];
+  toDoList.children.add(newToDo);
+}
+void deleteText(MouseEvent event) {
+  toDoList.children.clear();
+  var newToDo = new LIElement();
+  newToDo.text= "点名记录";
+  toDoList.children.add(newToDo);
 }

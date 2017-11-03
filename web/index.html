@@ -9,11 +9,26 @@
   <body>
     <h1>Web点名小程序</h1>
 
-    <p>点击姓名开始点名！</p>
+    <p>点击按钮开始点名！
+     </p>
+    <button id="to-do-start">开始</button>
+
+    
     <div id="sample_container_id">
-      <p id="sample_text_id">开始</p>
+      <p id="sample_text_id"></p>
       <p id="sample_studentid_id"></p>
+    </div>    
+    <input type="text" 
+           id="to-do-input"
+           placeholder="添加的名字">
+    <button id="to-do-delete">删除所有记录</button>
+    <div>
+      <ul id="to-do-list">点名记录
+        </ul>
     </div>
+
+
+
     <script type="application/dart" src="main.dart"></script>
     <script src="packages/browser/dart.js"></script>
   </body>

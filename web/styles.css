@@ -13,12 +13,12 @@ h1, p {
 }
 
 #sample_container_id {
-  width: 80%;
-  height: 350px;
+  width: 50%;
+  height: 330px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  border: 5px solid rgba(190, 168, 168, 0.71);
+  border: 3px solid rgba(190, 168, 168, 0.71);
   background-color: rgba(236, 169, 189, 0.4);
 }
 
@@ -36,5 +36,38 @@ h1, p {
   margin-top: 100px;
   -webkit-user-select: none;
   user-select: none;
+  color: #835555;
+}
+#to-do-input {
+  font-size: 16pt;
+  margin-top: 100px;
+  margin-left: 450px;
+  -webkit-user-select: none;
+  user-select: none;
+  color: #2E2323;
+}
+#to-do-list {
+  font-size: 14pt;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 300px;
+  margin-left: 480px;
+  -webkit-user-select: none;
+  width: 300px;
+  line-height:24px;
+  user-select: none;
+  color: #2E2323;
+  background-color: rgba(108, 142, 173, 0.27)
+}
+#to-do-start {
+  font-size: 16pt;
+  text-align: center;
+  margin-left: 625px;
+  margin-bottom: 20px;
+  color: #835555;
+}
+#to-do-delete {
+  font-size: 16pt;
+  text-align: center;
   color: #835555;
 }
