@@ -21,28 +21,31 @@ var stuInfor = [
    '10154507132 苏颖晞',
    '10154507134 姜宇轩',
    '10154507138 于潇雪',
-   '10152510231 wqngze',
+   '10152510231 吴清泽',
+   '10152510133 权宁真',
 ];
-var s1=" ";
+ 
+UListElement parent_li;
 
 void main() {
-  querySelector('#sample_text_id')
-    ..text = 'Click me!'
+  parent_li = querySelector('#sample_studentid_id');
+  querySelector('#start_dianming')
+    ..text = '点名'
     ..onClick.listen(dianming);
-  querySelector('#sample_studentid_id')
-    ..text = '查看已点名单'
-    ..onClick.listen(nameli);
+  querySelector('#clear_all').onClick.listen((e)=> parent_li.children.clear());
+ 
 }
-/**
- * by teacher:很好，如果继续改进，可以用一个结构来保留已点名信息而不是使用字符串。结构更便于遍历和索引。
- */
+
 void dianming(MouseEvent event) {
   var rdm = new math.Random();
   int i = rdm.nextInt(stuInfor.length);
   querySelector('#sample_text_id').text = stuInfor[i];
-  s1 = s1 + stuInfor[i];
+  
+  var new_name = new LIElement();
+  new_name.text = querySelector('#sample_text_id').text;
+  parent_li.children.add(new_name);
+  new_name.onClick.listen((e)=>new_name.remove());
 }
 
-void nameli(MouseEvent event) {
-  querySelector('#sample_studentid_id').text = "已点名单：" + s1;
-}
+
+

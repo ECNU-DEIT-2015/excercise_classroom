@@ -45,3 +45,10 @@ body {
     line-height: 1.5em;
   }
   
+#history_dianming{
+  margin-top:40px;
+}
+
+ul{
+  list-style: none;
+}
