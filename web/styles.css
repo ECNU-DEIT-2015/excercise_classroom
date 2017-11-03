@@ -8,14 +8,11 @@ body {
   }
   
   h1 {
-    font-size: 48pt;  
+    font-size: 24pt;  
     color: #333;
-    text-align: center;
   }
   
   p {
-    font-size: 24pt;
-    color: #333;
     text-align: center;
   }
 
@@ -32,5 +29,32 @@ body {
     margin-top: 140px;
     -webkit-user-select: none;
     user-select: none;
+  }
+  #click {
+    font-size: 16pt;
+    text-align: center;
+    margin-left: 575px;
+    margin-bottom: 20px;
+  }
+  #delete {
+    font-size: 16pt;
+    margin-top: 100px;
+    margin-left: 600px;
+    -webkit-user-select: none;
+    user-select: none;
+    color: #2E2323;
+  }
+  #to-do-list {
+    font-size: 14pt;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 300px;
+    margin-left: 480px;
+    -webkit-user-select: none;
+    width: 300px;
+    line-height:24px;
+    user-select: none;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.27)
   }
   

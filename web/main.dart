@@ -4,42 +4,39 @@
 import 'dart:html';
 import 'dart:math' as math;
 
-var studentname = {
-// Keys  Values
-  0:  '吴清泽',      1:  '韩庆慧',
-  2:  '谢函',        3:  '宋金阳',
-  4:  '李佳璇',      5:  '谢琪',
-  6:  '杨芙蓉',      7:  '荆泽宇',
-  8:  '黄大龙',      9: '李敏',
-  10: '刘冠群',      11: '林凌',
-  12: '颜欢',        13: '彭茂源',
-  14: '张思宁',      15: '崔红洋',
-  16: '汤夏颖',      17: '苏颖晞',
-  18: '姜宇轩',      19: '于潇雪',
-};
-  var studentnumber = {
-// Keys  Values
-  0:  '10152510231',        1:  '10154507101',
-  2:  '10154507102',        3:  '10154507103',
-  4:  '10154507104',        5:  '10154507107',
-  6:  '10154507109',        7:  '10154507110',
-  8:  '10154507112',        9:  '10154507113',
-  10: '10154507114',        11: '10154507117',
-  12: '10154507119',        13: '10154507121',
-  14: '10154507123',        15: '10154507124',
-  16: '10154507127',        17: '10154507132',
-  18: '10154507134',        19: '10154507138',
-};
+UListElement toDoList;
+ButtonElement toDoStart, toDoDelete;
 
 void main() {
-  querySelector('#sample_text_id')
-    ..text = '点击屏幕开始点名'
-    ..onClick.listen(rollcall);
+  toDoStart = querySelector('#click');
+  toDoStart.onClick.listen(rollcall);
+  toDoList = querySelector('#to-do-list');
+  toDoDelete = querySelector("#delete");
+  toDoDelete.onClick.listen(deleteText);
+}
+
+void deleteText(MouseEvent event) {
+  toDoList.children.clear();
 }
 
 void rollcall(MouseEvent event) {
   var random=new math.Random().nextInt(20);
-  querySelector('#sample_text_id').text = '姓名:' + studentname[random].toString();
-  querySelector('#sample_studentid_id').text='学号:' + studentnumber[random].toString();
-     
+  var studentlist = {
+// Keys  Values
+  0:  '10152510231  吴清泽',      1:  '10154507101  韩庆慧',
+  2:  '10154507102  谢函',        3:  '10154507103  宋金阳',
+  4:  '10154507104  李佳璇',      5:  '10154507107  谢琪',
+  6:  '10154507109  杨芙蓉',      7:  '10154507110  荆泽宇',
+  8:  '10154507112  黄大龙',      9:  '10154507113  李敏',
+  10: '10154507114  刘冠群',      11: '10154507117  林凌',
+  12: '10154507119  颜欢',        13: '10154507121  彭茂源',
+  14: '10154507123  张思宁',      15: '10154507124  崔红洋',
+  16: '10154507127  汤夏颖',      17: '10154507132  苏颖晞',
+  18: '10154507134  姜宇轩',      19: '10154507138  于潇雪',
+};
+  querySelector('#sample_text_id').text = '学号 姓名：' + studentlist[random].toString();
+  var newToDo = new LIElement();
+  newToDo.text= studentlist[random].toString();
+  toDoList.children.add(newToDo);
+  newToDo.onClick.listen((e)=>newToDo.remove());
 }
