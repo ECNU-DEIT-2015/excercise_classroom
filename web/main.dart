@@ -1,47 +1,93 @@
+// Copyright (c) 2017, meflyup. All rights reserved. Use of this source code
+
+// is governed by a BSD-style license that can be found in the LICENSE file.
+
+
+
+
+
+// Copyright (c) 2017, meflyup. All rights reserved. Use of this source code 
+
+// is governed by a BSD-style license that can be found in the LICENSE file. 
+
+
+
 import 'dart:html';
-import 'dart:math' show Random;
 
-LIElement list;
+import 'dart:math' as math; 
+
+UListElement DoList;
+
 ButtonElement deleteAll;
-String studentname;
 
-List nameList = ["10154507101","10154507102","10154507103","10154507104",
-"10154507107","10154507109","10154507110","10154507112",
-"10154507113","10154507114","10154507117","10154507121","10154507123",
-"10154507124","10154507127","10154507132","10154507134","10154507138",
-"韩庆慧","谢函","宋金阳","李佳璇","谢琪","杨芙蓉","荆泽宇","黄大龙","李敏",
-"刘冠群","林凌","彭茂源","张思宁","崔红洋","汤夏颖","苏颖晞","姜宇轩","于潇雪"];
-var times= new List<int>();
+String stuname;
 
-void main()
-{ 
-  querySelector("#clickButton").onClick.listen(onBtnClicked);
-  list = querySelector('#list');
-  list.onChange.listen(addlistitem);
-  deleteAll= querySelector('#delete-all'); 
-  deleteAll.onClick.listen(deleteAllElements);
 
-}
+void main() { 
 
-void onBtnClicked(Event e)
-{
-  Random select_number = new Random();
-  int number = select_number.nextInt(18);
-  querySelector("#select-name").text = nameList[number];
-  querySelector("#select-id").text = nameList[number+18];
-  studentname=nameList[number+18];
-  addlistitem(e);
-}
+querySelector('#sample_text_id') 
+
+..text = 'click to choose one student' 
+
+..onClick.listen(reverseText); 
 
 
 
-void addlistitem(Event e)
-{
-  var newName = new LIElement();
-  newName.text = studentname;
-  list.children.add(newName);
+DoList = querySelector('#list_id');  
+
+DoList.onChange.listen(addToDoItem);
+
+deleteAll= querySelector('#delete-all'); 
+
+deleteAll.onClick.listen(deleteAllElements);
+
+
+
+} 
+
+
+
+
+void addToDoItem(Event e){
+
+ var ToDo = new LIElement();
+
+ToDo.text=stuname;
+
+DoList.children.add(ToDo); 
+
 }
 
 void deleteAllElements(Event e) {
-  list.children.clear();
+
+  DoList.children.clear();
+
 }
+
+
+
+void reverseText(MouseEvent event) { 
+
+var randomNumber = new math.Random().nextInt(16); 
+
+var stuNames = { 
+
+1: '宋哈哈', 2: '谢函', 3: '黄大龙', 4: '韩庆慧', 5: '李佳璇', 6: '于潇雪', 7: '姜宇轩', 8: '王五',
+9: '张三', 10: '陈冠雄', 11: '刘冠群', 12: '馒头', 13: '花卷', 14: '烟花', 15: '棒棒糖', 16: 'jasmine', 
+17：'小黄',18:‘小红’，19：‘小绿’，20：‘小a’，21：‘小b’，22：‘小c’，23：‘小d’，24：‘茂茂彭’；
+
+}; 
+
+querySelector("#sample_text_id").text='学号：'+randomNumber.toString() 
+
++' '+' '+' '+'姓名：'+stuNames[randomNumber]; 
+
+
+
+stuname=stuNames[randomNumber];
+
+addToDoItem(event);
+
+
+
+} 

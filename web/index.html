@@ -1,41 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+
+
+
+<!--
+
+  Copyright (c) 2017, meflyup. All rights reserved. Use of this source code
+
+  is governed by a BSD-style license that can be found in the LICENSE file.
+
+-->
+
+
+
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-  <title>exercise</title>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+
+    <title>exercise</title>
+
 </head>
-<body>
-<div id="nav">
-    <h3>历史记录</h3>
-    向下滑动查看更多记录<br>
-    <button id="delete-all">清空记录</button>
-    <table>
-        <tr>        
-          <td>
-          <ul id="list"></ul>
-          </td>  
-        </tr>
-      </table> 
 
-</div>
+    <body>
 
-<div id="section">
-   <p id="title">看看谁是幸运儿</p>
-   <p id="text1">被点到的同学是
-    <p id="select-name">？？？？？？</p>
-    <br>
-    <p id="select-id">？？？？？？</p>    
-   </p> 
-   <center><button id="clickButton">开始点名</button></center>
-   <br>
-</div>
-<link rel="stylesheet" href="styles.css">
-<script defer src="main.dart" type="application/dart"></script>
-<script defer src="packages/browser/dart.js"></script>
-<div id="output"></div>
+      <h1>随机点名</h1>
+
+
+      <table id="sample_table_id">
+
+          <tr>
+
+            <td class="text">
+
+              you have chosed these students:
+
+            </td>
+
+            <td>
+
+                <button id="delete-all" type="button" style="float:right"> Delete History</button>
+
+            </td>
+
+          </tr>
+
+          <tr>        
+
+            <td>
+
+            <ul id="sample_list_id"></ul>
+
+            </td>  
+
+          </tr>
+
+        </table> 
+             
+
+      <div id="sample_container_id">
+
+      <p id="sample_text_id"> click </p>   
+
+      </div>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script defer src="main.dart" type="application/dart"></script>
+
+    <script defer src="packages/browser/dart.js"></script>
+
+  <div id="output"></div>
 
 </body>
+
 </html>
