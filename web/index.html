@@ -17,8 +17,25 @@
    </label>
 
    <p id="text1">被点到的同学</p>
+
    <p id="select-name">请点击点名按钮</p>
    <p id="select-studentnum">请点击点名按钮</p>
+
+   <p id="selected-student">被点过的次数</p>
+   <label class="selected-stuLabel">
+       <select id="selected-stuList">
+           <option value="class1" class = "selected-stu-class" id="selected-stu">点击以查看点到的次数</option>
+       </select>
+   </label>
+
+   <p id="selected-student-histroy">被点过的同学</p>
+   <label class="selected-stuLabel-history">
+       <select id="selected-stuList-history">
+           <option value="class1" class = "selected-stu-class-history" id="selected-history-stu">点击以查看点名历史记录</option>
+       </select>
+   </label>
+
    <input class="but" id="clickBtn" type="button" value="点名">
+   <input class="but" id="removeBtn" type="button" value="清除点名数据">
 </body>
 </html>
