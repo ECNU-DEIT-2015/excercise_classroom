@@ -1,34 +1,98 @@
-// Copyright (c) 2017, meflyup. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-
 import 'dart:html';
 import 'dart:math';
 
-void main() {
 
-  var std =[
-  '10152510231 吴清泽',
-	'10154507101 韩庆慧',
+var students = [
+  '10154507101 韩庆慧',
 	'10154507103 宋金阳',
 	'10154507104 李佳璇',
 	'10154507107 谢琪',
 	'10154507109 杨芙蓉',
 	'10154507113 李敏',
-	'10154507114 刘冠群',
-	'10154507117 林凌',
-	'10154507119 颜欢'
-	'10154507121 彭茂源',
-	'10154507123 张思宁',
-	'10154507124 崔红洋',
-	'10154507127 汤夏颖',
-	'10154507132 苏颖晞',
-	'10154507138 于潇雪',
-  	];
+	];
 
-  querySelector('#my_button')    
-  ..onClick.listen((MouseEvent event) {
-  var rng = new Random();
-  querySelector('#output').text = std[rng.nextInt(std.length)];
-  // querySelector('#output').text = rng.nextInt(16).toString();
-});
+Map dianmingstudent = {};
+
+void main() async{
+	querySelector('#dianming_button')
+    ..onClick.listen(dianming);
+
+  querySelector("#remove")
+    ..onClick.listen(remove);
 }
+
+void remove(MouseEvent event)
+{
+  TableElement t = query("#my_table");
+   for(var i=0; i<dianmingstudent.length; i++)
+   {
+     t.deleteRow(1);
+   }
+   dianmingstudent.clear();
+   querySelector("#student").text = "点击按钮随机点名";
+}
+
+
+
+void dianming(MouseEvent event) {
+  var rng = new Random();
+  String stu = students[rng.nextInt(students.length)];
+  querySelector('#student').text = stu;
+  String xuehao = stu.split(" ")[0];
+  String name = stu.split(" ")[1];
+  TableElement table = query('#my_table');
+
+
+  if(dianmingstudent[xuehao] == null)
+  {
+    List l = [];
+    l.add(name);
+    l.add(1);
+    dianmingstudent[xuehao] = l; 
+
+    TableRowElement row = table.insertRow(1);
+
+    row.className = 'warning';
+    if(table.rows.length > 2)
+    {
+      for(var i= 2; i<table.rows.length; i++)
+      {
+        table.rows[i].className = 'success';
+      }
+      
+    }
+    
+    TableCellElement cell = row.insertCell(0);
+    cell.text = xuehao;
+
+    row.insertCell(1)
+      ..text = name;
+
+    row.insertCell(2)
+      ..text = dianmingstudent[xuehao][1];
+  }
+  else
+  {
+    dianmingstudent[xuehao][1] += 1;
+
+    
+    List<TableRowElement> l = table.rows;
+    for(var i=0; i<l.length; i++)
+    {
+      if(l[i].className == "warning")
+      {
+        l[i].className = "success";
+      }
+      if(xuehao == l[i].cells[0].text)
+      {
+        l[i].cells[2].text = dianmingstudent[xuehao][1];
+        l[i].className = "warning";
+        
+      }
+
+    }
+
+  }
+  
+}
+

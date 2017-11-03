@@ -1,29 +1,59 @@
 <!DOCTYPE html>
 
-<!--
-  Copyright (c) 2017, meflyup. All rights reserved. Use of this source code
-  is governed by a BSD-style license that can be found in the LICENSE file.
--->
-
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-    <title>exercise</title>
+    <title>Dianming</title>
     <link rel="stylesheet" href="css\bootstrap.min.css" />
     <script type="text/javascript" src="js\jquery-3.1.1.min.js" ></script>
     <script type="text/javascript" src="js\bootstrap.min.js"></script>
     <script src="js\angular.min.js"></script>
-    <script defer src="main.dart" type="application/dart"></script>
-    <script defer src="packages/browser/dart.js"></script>
 </head>
+<body background="http://engati.com/images/custom-img/home-page-artwork.svg">
 
-<body>
-  <div style="margin: 150px 0px 0px 600px;">
-      <button class="btn btn-default" id="my_button">随机点名</button>
-      <div id="output" style="margin: 10px"></div>  
-  </div>
+<div class="container">
+    <div class="row clearfix" style="margin: 50px" >
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-3 column">
+                </div>
+                <div class="col-md-6 column">
+                    <div class="jumbotron">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <button type="button" class="btn btn-default" id="dianming_button">点名</button>
+                                <h3 id="student">
+                                    点击按钮随机点名
+                                </h3>
+                            </div>
+                            <p id="my_p"></p>
+                        </div>
+                        <table class="table" id="my_table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            学号
+                                        </th>
+                                        <th>
+                                            姓名
+                                        </th>
+                                        <th>
+                                            已点次数
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <button id="remove" class="btn btn-danger">remove </button>
+                    </div>
+                </div>
+                <div class="col-md-3 column">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="application/dart" src="dianming.dart"></script>
+<script src="packages/browser/dart.js"></script>
 </body>
 </html>
+
