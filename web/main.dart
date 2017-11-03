@@ -2,30 +2,53 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:html';
-import 'dart:math' ;
-ButtonElement genButton;
+import 'dart:math' as math;
+UListElement studentlist;
+String getname=" ";
 
-//很好，尝试使用类来做。加油！
-class Student{
-  static final Random indexGen = new Random();
-  final int id;
-  String name;
-  Student(this.id,this.name);
-  String toString()=>'$id,$name';
-List<Student> students=[new Student(1,'Apple'),new Student(2,'Banana'),new Student(3,'Orange'),new Student(4,'Watermelon'),
-new Student(5,'Pear'),new Student(6,'Lemon'),new Student(7,'Mango')];
+void Click(MouseEvent event){          //鼠标点击进行随机点名
+  var idnumber=new math.Random().nextInt(20);
+  var studentname = new List<String>();
+  var studentid=new List<String>();
+
+  studentname.addAll([
+ '韩庆慧','谢函','宋金阳','李佳璇','谢琪','杨芙蓉','荆泽宇','黄大龙','李敏','刘冠群','林凌','彭茂源','张思宁','崔红洋',
+ '汤夏颖','苏颖晞','姜宇轩','于潇雪','吴清泽','权宁真',]);
+
+studentid.addAll([
+ '10154507101', '10154507102','10154507103', '10154507104','10154507107','10154507109','10154507110','10154507112',
+  '10154507113','10154507114','10154507117','10154507121','10154507123','10154507124','10154507127',
+  '10154507132','10154507134','10154507138','10152510231','10152510133'
+]);
+
+  querySelector("#studentid").text='学号：  '+studentid[idnumber];
+  querySelector("#name").text='姓名：'+studentname[idnumber];         //点击后显示学生学号和姓名
+  getname=studentname[idnumber];
+  addelemnt(event);             //点名后将名字储存在列表中
 }
 
-
-
-void Click(Event e){
-//对包的使用有误，想想：quesrySelector怎么不用html.querySelecto？
- var number=new math.Random().nextInt(10);
-  querySelector('#name').text = Student(number,name);
+void DeleteButton(MouseEvent event){
+   studentlist.children.clear(); 
 }
+
+void addelemnt(Event event)       //动态显示列表
+ {  var newnamelist=new LIElement();
+    newnamelist.text=getname;
+    studentlist.children.add(newnamelist);
+    newnamelist.onClick.listen((e)=>newnamelist.remove());
+ }
 
 void main() {
-  querySelector('clickButton').text = '点名小程序.';
-  ..onClick.listen(Click)
-  //..onClick的用法有误，请查看案例。dart语句语法有误，请查看案例
+  querySelector('#anniu')
+    ..id
+    ..onClick.listen(Click);
+
+    studentlist=querySelector("#namelist");
+    studentlist.onChange.listen(addelemnt);
+
+    querySelector("#delete")//删除
+   ..id
+   ..onClick.listen(DeleteButton);
 }
+
+
