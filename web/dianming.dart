@@ -120,10 +120,10 @@ void dianming(MouseEvent event)
   ImageElement img = querySelector("#pic");
   if(s['gender'] == 'f')
   {
-    img.src = "http://pic29.nipic.com/20130525/7487939_155123274150_2.jpg";
+    img.src = "https://raw.githubusercontent.com/wuqingze/jj/master/girl.jpg";
   }
   else{
-    img.src = "https://img00.deviantart.net/e2ed/i/2011/254/f/8/l_death_note_tshirt_design_by_yoonhee-d49iw6y.jpg"; 
+    img.src = "https://github.com/wuqingze/jj/blob/master/boy.jpg?raw=true"; 
   }
   
 }
@@ -160,7 +160,7 @@ void nansheng(MouseEvent event)
   querySelector("#count").text = stu[s['id']];
 
   ImageElement img = querySelector("#pic");
-  img.src = "https://img00.deviantart.net/e2ed/i/2011/254/f/8/l_death_note_tshirt_design_by_yoonhee-d49iw6y.jpg"; 
+  img.src = "https://github.com/wuqingze/jj/blob/master/boy.jpg?raw=true"; 
   
 }
 
@@ -196,11 +196,12 @@ void nvsheng(MouseEvent event)
   querySelector("#count").text = stu[s['id']];
 
   ImageElement img = querySelector("#pic");
-  img.src = "http://pic29.nipic.com/20130525/7487939_155123274150_2.jpg"; 
+  img.src = "https://raw.githubusercontent.com/wuqingze/jj/master/girl.jpg"; 
 }
 
 void delete(MouseEvent event)
 {
+  querySelector('#display').hidden = true;
   TableElement t = query("#table");
    for(var i=0; i<stu.length; i++)
    {
