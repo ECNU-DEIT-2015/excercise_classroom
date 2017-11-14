@@ -1,43 +1,66 @@
 import 'dart:html';
-import 'dart:math' show Random;
+import 'dart:math';
+import 'dart:io';
+import 'dart:convert';
 
-
+var student_list = ["74747947 张晓明","24724744 王高丽","48848482 章泽天"];
+Map dianming_count = new Map();
 void main() {
-//你对应的html中有你要查找的元素吗？
-  querySelector('#sample_text_id')
-    ..text = '开始点名!'
-    ..onClick.listen(makeCall);
-  querySelector('#1')
-    ..text = '清除'
-    ..onClick.listen(removal);
+
+query("#dianming")
+    ..onClick.listen(dianming);
+
+  querySelector("#remove")
+    ..onClick.listen(delete);
 }
 
+void dianming(MouseEvent event)
+{
+  var rng = new Random();
+  var name = query("#name");
+  var xuehao = query("#student_id");
+  var count = query("#dianming_count");
+  Int rng_num = rng.nextInt(student_list.length);
+  name.text = student_list[rng_num].split(" ")[1];
+  xuehao.text = student_list[rng_num].split(" ")[0];
+  TableElement table = query("#table");
+  if(dianming_count.containsKey(rng_num))
+  {
+    dianming_count[rng_num] = dianming_count[rng_num] + 1;
+    List<TableRowElement> l = table.rows;
+    for(var i=0; i<l.length; i++)
+    {
+      if(l[i].className == "warning")
+      {
+        l[i].className = "";
+      }
+      if(name.text == l[i].cells[0].text)
+      {
+        l[i].cells[1].text = dianming_count[rng_num];
+        l[i].className = "warning";
+      }
 
-  void makeCall(MouseEvent event) {
-    var name = [
-// Keys      Values
-    '1.'     '小明',
-    '2.'     '小红',
-    '3.'     '小城',
-    '4.'     '小洋',
-    '5.'     '小吕',
-    '6.'     '小心',
-    '7.'     '小例',
-    '8.'     '小系',
-    '9.'     '小力',
-    '10.'     '小曲'
-    ];
+    }
+  }else{
+    dianming_count[rng_num] = 1;
+    TableRowElement row = table.insertRow(1);
 
+    row.insertCell(0)
+      ..text = name.text;
 
-    
-    var ad=new Random();
-    querySelector('#sample_text_id').text = name[ad.nextInt(name.length)];
-
-    var newToDo=new LIElement();
-    for(int i=1;i<10;i++)     newToDo.children.add(#sample_text_id.text);
-    querySelector('#done_text_id').text = newToDo;
-
+    row.insertCell(1)
+      ..text = dianming_count[rng_num];
   }
-void removal(MouseEvent event)
-     { #done_text_id.text.removal;}
+  count.text = dianming_count[rng_num];
+}
+
+void delete(MouseEvent event)
+{
+  TableElement t = query("#table");
+   for(var i=0; i<dianming_count.length; i++)
+   {
+     t.deleteRow(1);
+   }
+   dianming_count.clear();
+}
 

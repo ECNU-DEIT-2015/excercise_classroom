@@ -11,18 +11,65 @@
     <meta charset="utf-8">
     <title>Web</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css\bootstrap.min.css" />
+    <script type="text/javascript" src="js\jquery-3.1.1.min.js" ></script>
+    <script type="text/javascript" src="js\bootstrap.min.js"></script>
   </head>
   <body>
-    <h1>欢迎大家来到web课堂！</h1>
-    <P> </P>
-    <p><dfn>接下来我们开始进行一项有趣的活动!</dfn></p>
-
-    <div id="sample_container_id">
-      <p id="sample_text_id">开始点名!</p>
-    </div>
-
+      <h1>欢迎大家来到web课堂！</h1>
+      <P> </P>
+      <p><dfn>接下来我们开始进行一项有趣的活动!</dfn></p>
+  
+      <div class="container">
+          <div class="row clearfix">
+            <div class="col-md-12 column">
+              <div class="row clearfix">
+                <div class="col-md-6 column">
+                    <div class="row clearfix">
+                        <div class="col-md-2 column">
+                        </div>
+                        <div class="col-md-8 column">
+                            <div>
+                  
+                                <div style="margin:100px">
+                                    姓名:<span id="name"></span></br>
+                                    学号:<span id="student_id"></span><br>
+                                    次数:<span id="dianming_count"></span><br>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-2 column">
+                            <button id="dianming" type="button" class="btn btn-default">开始点名</button>
+                            <br>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6 column">
+                    <div class="page-header">
+                            <h2><small>历史消息</small><span style="margin:0px 0px 0px 300px"></span><button class="btn btn-btn-warning btn-sm " id="remove">删除记录</button></h2>
+                    </div>
+                  
+                    <table class="table" id="table">
+                        
+                         <thead>
+                            <tr>
+                               <th>名字</th>
+                               <th>点到次数</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                           
+                         </tbody>
+                      </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
     <script type="application/dart" src="main.dart"></script>
     <script src="packages/browser/dart.js"></script>
   </body>
 </html>
+
 
