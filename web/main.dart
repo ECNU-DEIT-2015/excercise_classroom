@@ -32,8 +32,6 @@ void main() {
   querySelector('#start_dianming')
     ..text = '点名'
     ..onClick.listen(dianming);
-  querySelector('#clear_all').onClick.listen((e)=> parent_li.children.clear());
- 
 }
 
 void dianming(MouseEvent event) {
