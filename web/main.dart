@@ -9,7 +9,7 @@ ButtonElement toDoStart, toDoDelete;
 
 void main() {
   toDoStart = querySelector('#click');
-  toDoStart.onClick.listen(rollcall);
+  toDoStart.onClick.listen(rollcall0);
   toDoList = querySelector('#to-do-list');
   toDoDelete = querySelector('#delete');
   toDoDelete.onClick.listen(delete);
