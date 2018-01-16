@@ -39,16 +39,11 @@
 
 # 我的编程实践活动
 ## 我的代码
->采用markdown 中代码标记来粘贴你完成的那些代码。  比如：
   
-```dart
-///主函数
-main(){
-var element;
-}
-///什么按钮的事件函数
-void click(event e){
-}
+```mysql
+update project_2015_1.means set  means="自己的,特有的" where wordID=5 and posID=3;
+update project_2015_1.means set  Csent=" 我承认原先我对她的评价很苛刻。"  where wordID=5 and posID=5;
+update project_2015_1.means set  Esent="I own that I judged her harshly at first." where wordID=5 and posID=5;
 
 ```
   
